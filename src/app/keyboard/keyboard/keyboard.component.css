@@ -1,0 +1,150 @@
+/* keyboard settings */
+
+@keyframes shiver {
+  0%   {  transform: translate(1px, 1px); text-shadow: 6px 0 rgba(255,0,0,0.9), -6px 0 rgba(0,0,255,0.9);  }
+  5%   {  transform: translate(1px, 1px); text-shadow: 3px 0 rgba(255,0,0,0.9), -3px 0 rgba(0,0,255,0.9);  }
+  10%  {  transform: translate(1px, 1px); text-shadow: 5px 0 rgba(255,0,0,0.9), -5px 0 rgba(0,0,255,0.9);  }
+  15%  {  transform: translate(1px, 1px); text-shadow: 7px 0 rgba(255,0,0,0.9), -7px 0 rgba(0,0,255,0.9);  }
+  20%  {  transform: translate(1px, 2px); text-shadow: 2px 0 rgba(255,0,0,0.9), -2px 0 rgba(0,0,255,0.9);  }
+  25%  {  transform: translate(1px, 2px); text-shadow: 2px 0 rgba(255,0,0,0.9), -2px 0 rgba(0,0,255,0.9);  }
+  30%  {  transform: translate(1px, 2px); text-shadow: 3px 0 rgba(255,0,0,0.9), -3px 0 rgba(0,0,255,0.9);  }
+  35%  {  transform: translate(1px, 2px); text-shadow: 2px 0 rgba(255,0,0,0.9), -2px 0 rgba(0,0,255,0.9);  }
+  40%  {  transform: translate(2px, 1px); text-shadow: 2px 0 rgba(255,0,0,0.9), -2px 0 rgba(0,0,255,0.9);  }
+  45%  {  transform: translate(2px, 1px); text-shadow: 3px 0 rgba(255,0,0,0.9), -3px 0 rgba(0,0,255,0.9);  }
+  50%  {  transform: translate(2px, 1px); text-shadow: 3px 0 rgba(255,0,0,0.9), -3px 0 rgba(0,0,255,0.9);  }
+  55%  {  transform: translate(2px, 1px); text-shadow: 4px 0 rgba(255,0,0,0.9), -4px 0 rgba(0,0,255,0.9);  }
+  60%  {  transform: translate(1px, 1px); text-shadow: 2px 0 rgba(255,0,0,0.9), -2px 0 rgba(0,0,255,0.9);  }
+  65%  {  transform: translate(1px, 1px); text-shadow: 5px 0 rgba(255,0,0,0.9), -5px 0 rgba(0,0,255,0.9);  }
+  70%  {  transform: translate(1px, 1px); text-shadow: 3px 0 rgba(255,0,0,0.9), -3px 0 rgba(0,0,255,0.9);  }
+  75%  {  transform: translate(1px, 1px); text-shadow: 2px 0 rgba(255,0,0,0.9), -2px 0 rgba(0,0,255,0.9);  }
+  80%  {  transform: translate(2px, 1px); text-shadow: 5px 0 rgba(255,0,0,0.9), -5px 0 rgba(0,0,255,0.9);  }
+  85%  {  transform: translate(2px, 1px); text-shadow: 3px 0 rgba(255,0,0,0.9), -3px 0 rgba(0,0,255,0.9);  }
+  90%  {  transform: translate(2px, 2px); text-shadow: 5px 0 rgba(255,0,0,0.9), -5px 0 rgba(0,0,255,0.9);  }
+  95%  {  transform: translate(2px, 2px); text-shadow: 2px 0 rgba(255,0,0,0.9), -2px 0 rgba(0,0,255,0.9);  }
+  100% {  transform: translate(1px, 2px); text-shadow: 3px 0 rgba(255,0,0,0.9), -3px 0 rgba(0,0,255,0.9);  }
+}
+
+.keyboard {
+  --key_size: calc(100vw / 25) /* 60px; */;
+  --keyboard_clr_background: rgb(201, 201, 201);
+  --keyboard_clr_shadow: rgba(0, 0, 0, 1);
+  --key_clr_background:  #fff;
+  --key_clr_shadow: rgb(80, 80, 80);
+  --key_clr_text: rgb(0, 0, 0);
+  --key_font: "Questrial", sans-serif;
+  --key_clr_border: rgb(0, 0, 0);
+  --key_clr_border_hover: rgb(200, 35, 35);
+  --key_clr_border_active: rgb(20, 100, 20);
+  --key_shadow_light: #c9c9c9;
+  --key_shadow_dark: #5f5f5f;
+  --key_press:  #FFD55E;
+  --key_radius : '20px'
+
+
+  --key_shadow_left : #c9c9c9;
+  --key_shadow_right : #c9c9c9;
+  --key_shadow_top : #5f5f5f;
+  --key_shadow_bottom : #c9c9c9;
+
+  --key_border_left : 4px;
+  --key_border_right : 4px;
+  --key_border_top : 8px;
+  --key_border_bottom : 2px;
+
+
+}
+
+h1 {
+  color: white;
+  font-size: calc(100vw / 20);
+  font-family: "Questrial", sans-serif;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 20px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: calc(var(--key_size) / 2);
+  padding-right: calc(var(--key_size) / 1);
+  user-select: none;
+  font-family: var(--key_font);
+}
+.section {
+  padding-left: calc(var(--key_size) / 2.5);
+  display: grid;
+  grid-template-rows: repeat(5, var(--key_size));
+  grid-gap: calc(var(--key_size) / 40);
+}
+.section.left {
+  grid-template-columns: repeat(30, calc(var(--key_size) / 2));
+}
+.section.right {
+  grid-template-columns: repeat(6, calc(var(--key_size) / 2));
+}
+.key {
+  background-color: var(--key_clr_background);
+  border: calc(var(--key_size) / 50) solid var(--key_clr_border);
+  border-radius: var(--key_radius);
+  grid-column: span 2;
+  font-size: calc(var(--key_size) / 3.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  border-left: solid 4px var(--key_shadow_left);
+  border-bottom: solid 4px var(--key_shadow_bottom);
+  border-top: solid 4px var(--key_shadow_top);
+  border-right: solid 4px var(--key_shadow_right);
+  border-width: var(--key_border_top) var(--key_border_right) var(--key_border_bottom) var(--key_border_left);
+  font-weight: bolder;
+  margin: 1.2px;
+}
+
+
+.key i {
+  font-weight: 600;
+}
+.emptykey {
+  grid-column: span 2;
+}
+.keyActive{
+  transform: scale(0.9);
+  background-color: var(--key_press);
+  margin: calc(var(--key_size) / 25) 0 0 calc(var(--key_size) / 25);
+}
+.backspace {
+  grid-column: span 4;
+}
+.tab {
+  grid-column: span 3;
+}
+.backslash {
+  grid-column: span 3;
+}
+.capslock {
+  grid-column: span 4;
+}
+.enter {
+  grid-column: span 4;
+}
+.leftshift {
+  grid-column: span 5;
+}
+.rightshift {
+  grid-column: span 5;
+}
+.leftctrl {
+  grid-column: span 6;
+}
+.rightctrl {
+  grid-column: span 3;
+}
+.space {
+  grid-column: span 14;
+}
+
+
+

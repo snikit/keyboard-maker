@@ -1,0 +1,55 @@
+<div class="texter" >
+  <label for="customRange1" class="form-label">BORDER WIDTH</label>
+  <div class="row">
+    <div class="col"  *ngFor="let prop of propNames">
+      <div class="row">
+        <label for="customRange1" class="form-label">{{prop}}</label>
+      </div>
+      <div class="row">
+        <div class="input-group mr-3">
+          <ngx-slider [(value)]="props.border[prop]" [options]="sliderOptions" (valueChange)="propChange()"></ngx-slider>
+        </div>
+      </div>
+    </div>
+    <div class="col" >
+      <div class="row">
+        <label for="customRange1" class="form-label">radius</label>
+      </div>
+      <div class="row">
+        <div class="input-group mr-3">
+          <ngx-slider [(value)]="props.border.radius" [options]="radiusSliderOptions" (valueChange)="propChange()"></ngx-slider>
+        </div>
+      </div>
+    </div>
+  </div>
+<br/>
+<br/>
+  <label for="customRange1" class="form-label">BORDER COLOR</label>
+  <div class="row">
+    <div class="col" *ngFor="let prop of propNames">
+      <div class="row">
+        <label for="customRange1" class="form-label">{{prop}}</label>
+      </div>
+      <div class="row">
+        <div class="input-group mr-3">
+          <input class="form-control"  [value]="props.color[prop]"
+       [style.background]="props.color[prop]"
+       [(colorPicker)]="props.color[prop]"  (colorPickerChange)="propChange()"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="col" >
+      <div class="row">
+        <label for="customRange1" class="form-label">active</label>
+      </div>
+      <div class="row">
+        <div class="input-group mr-3">
+          <input class="form-control"  [value]="props.color.active"
+       [style.background]="props.color.active"
+       [(colorPicker)]="props.color.active"  (colorPickerChange)="propChange()"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
